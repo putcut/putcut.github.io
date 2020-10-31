@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新しいフォルダー (2) | putcut.net</title>
+</head>
+<body>
+<script>
+  fetch('https://newfolder2.putcut.net/images/', {
+    mode: 'cors'
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(images) {
+    for (let i = 0; i < images.length; i++) {
+      var anchor = document.createElement( "a" );
+      anchor.href = 'https://twitter.com/' + images[i]["profile_id"];
+      var image = new Image();
+      image.src = images[i]["image_url"];
+      anchor.appendChild(image);
+      document.body.appendChild(anchor);
+    }
+    return true;
+  });
+</script>
+</body>
+</html>
