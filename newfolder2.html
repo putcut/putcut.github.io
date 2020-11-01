@@ -15,9 +15,9 @@
   })
   .then(function(images) {
     for (let i = 0; i < images.length; i++) {
-      var anchor = document.createElement( "a" );
+      const anchor = document.createElement( "a" );
       anchor.href = 'https://twitter.com/' + images[i]["profile_id"];
-      var image = new Image();
+      const image = new Image();
       image.src = images[i]["image_url"];
       anchor.appendChild(image);
       document.body.appendChild(anchor);
