@@ -16,9 +16,9 @@
   .then(function(images) {
     for (let i = 0; i < images.length; i++) {
       const anchor = document.createElement( "a" );
-      anchor.href = 'https://twitter.com/' + images[i]["profile_id"];
+      anchor.href = 'https://twitter.com/' + images[i]['profile_id'] + '/status/' + images[i]['tweet_id'];
       const image = new Image();
-      image.src = images[i]["image_url"];
+      image.src = images[i]['image_url'];
       anchor.appendChild(image);
       document.body.appendChild(anchor);
     }
