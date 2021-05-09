@@ -1,11 +1,11 @@
 .tier {
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 .content {
-  margin: 0 10px;
-  width: 400px;
+  width: 512px;
 }
 
 img {
