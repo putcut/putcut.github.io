@@ -46,14 +46,14 @@
       image.src = contents[i]['image']['url']
       div.appendChild(image)
 
-      switch (contents[i]['tier']) {
-        case 1:
+      switch (contents[i]['tier'][0]) {
+        case '1':
           document.getElementById('tier1').appendChild(div)
           break
-        case 2:
+        case '2':
         document.getElementById('tier2').appendChild(div)
           break
-        case 3:
+        case '3':
           document.getElementById('tier3').appendChild(div)
           break
       }
