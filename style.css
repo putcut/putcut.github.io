@@ -4,8 +4,12 @@
   gap: 16px;
 }
 
-.content {
+.anime {
   width: 512px;
+}
+
+.manga {
+  width: 256px;
 }
 
 img {
