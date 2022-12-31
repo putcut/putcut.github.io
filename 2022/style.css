@@ -1,0 +1,8 @@
+img {
+  width: 256px;
+}
+
+.image {
+  display: inline-block;
+  padding: 0 1px;
+}

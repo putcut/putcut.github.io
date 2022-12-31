@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>2022 夜ごはん | putcut.net</title>
+</head>
+<body>
+  <h1>2022 夜ご飯</h1>
+  <div>
+    <a href="nabe.html">鍋</a>
+    <a href="moyashi.html">モヤシ炒め</a>
+    <a href="tamagoyaki.html">やよい軒の玉子焼き</a>
+  </div>
+<script>
+  fetch('yorugohan.csv')
+  .then(response => response.text())
+  .then((csv) => {
+    const lines = csv.split('\n')
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].length == 0) {
+        continue
+      }
+      line = lines[i].split(',')
+      const div = document.createElement('div')
+      div.className = 'image'
+      const createdAt = document.createElement('div')
+      createdAt.appendChild(document.createTextNode(line[2]))
+      div.appendChild(createdAt)
+      const anchor = document.createElement('a')
+      anchor.href = 'https://twitter.com/putcutt/status/' + line[1]
+      const image = new Image()
+      image.src = line[0]
+      anchor.appendChild(image)
+      div.appendChild(anchor)
+      document.body.appendChild(div)
+    }
+  })
+</script>
+</body>
+</html>
